@@ -1,13 +1,11 @@
 package com.tech;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tech.knowledgeBase.KnowledgeBaseService;
-import com.tech.knowledgeBase.models.Rule;
-import com.tech.restAPI.RuleNamespace;
-import com.tech.rulesImpl.insuranceRuleEngine.InsuranceDetails;
-import com.tech.rulesImpl.insuranceRuleEngine.PolicyHolderDetails;
-import com.tech.rulesImpl.loanRuleEngine.LoanDetails;
-import com.tech.rulesImpl.loanRuleEngine.UserDetails;
+import com.tech.services.getRuleService;
+import com.tech.payloadData.Rule;
+import com.tech.Controller.RuleNamespace;
+import com.tech.payloadData.LoanDetails;
+import com.tech.payloadData.UserDetails;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.util.Lists;
 import org.junit.Before;
@@ -41,7 +39,7 @@ public class RuleEngineTest {
     @Autowired
     private WebApplicationContext webApplicationContext;
     @MockBean
-    private KnowledgeBaseService knowledgeBaseServiceMock;
+    private getRuleService knowledgeBaseServiceMock;
     private ObjectMapper objectMapper;
 
     @Before
